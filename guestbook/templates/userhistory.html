@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+
+<html>
+  
+  <body>
+    <a href="{{source}}">View</a>
+    <br>
+    <a href="/logout">Logout</a>
+    <br><br>
+
+    {% for page in pages %}
+      <div class="history">
+        <div class="page-date">{{page.created.strftime("%b %d, %Y")}}</div>
+        <pre class="post-content">{{page.content}}</div>
+        <a href="{{source}}?v={{loop.index0}}">View</a><br>
+        <a href="/_edit{{source}}?v={{loop.index0}}">Edit</a><br>
+    {% endfor %}
+
+  </body>
+</html>
